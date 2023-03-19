@@ -23,7 +23,9 @@ export class AuthService {
   async login(user: any){
     const payload = { username: user.username, sub: user._id};
     return {
+      //토큰 발행
       aceess_token: this.jwtService.sign(payload),
+      refresh_token: this.jwtService.sign(payload,{expiresIn:"7d"})
     }
   }
 
