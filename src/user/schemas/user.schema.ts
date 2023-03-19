@@ -9,10 +9,10 @@ export class User{
   username: string;
 
   @Prop()
-  password: string;
+  password?: string;
 
   @Prop()
-  age: number;
+  age?: number;
   
 }
 
