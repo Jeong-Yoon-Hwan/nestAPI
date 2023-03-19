@@ -12,7 +12,8 @@ export class AppController {
     private authService: AuthService
     ) {}
 
-
+  
+//로그인 경로 지정, 유저 정보 반환
   @UseGuards(LocalAuthGuard)
   @Post('auth/login')
   async login(@Request() req){
@@ -20,6 +21,8 @@ export class AppController {
     return this.authService.login(req.user._doc);
   }
 
+
+//JWT 유효성 검사후 user에 할당
   @UseGuards(JwtAuthGuard)
   @Get('profile')
   getProfile(@Request() req){

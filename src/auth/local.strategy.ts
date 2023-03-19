@@ -9,6 +9,7 @@ export class LocalStrategy extends PassportStrategy(Strategy){
     super();
   }
 
+  //입력받은 'username' && 'pw' 가 맞는지 체크
   async validate(username: string, password: string): Promise<any>{
     const user = await this.authService.validateUser(username, password);
     if(!user){

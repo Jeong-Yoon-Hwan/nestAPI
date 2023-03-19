@@ -29,6 +29,9 @@ export class UserService {
   // async findOne(id: string): Promise<User> {
   //   return await this.userModel.findById(id).exec();
   // }
+  
+  
+  // 'username'으로 DB조회
   async findOne(username: string): Promise<User | undefined>{
     return this.userModel.findOne({username: username}).exec();
   }

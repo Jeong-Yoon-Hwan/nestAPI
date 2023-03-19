@@ -12,8 +12,8 @@ import { JwtStrategy } from './jwt.strategy';
     UserModule, 
     PassportModule,
     JwtModule.register({
-      secret: jwtConstants.secret,
-      signOptions: { expiresIn: "60s"},
+      secret: jwtConstants.secret, 
+      signOptions: { expiresIn: "60s"}, //토큰 만료 시간 설정
     })
   ],
   providers: [AuthService, LocalStrategy,JwtStrategy],
